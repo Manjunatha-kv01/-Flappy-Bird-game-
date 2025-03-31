@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Prevent scrollbars if canvas is slightly off */
+}
+
+.game-container {
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden; /* Keep overlays contained */
+}
+
+#gameCanvas {
+    display: block; /* Remove extra space below canvas */
+    background: linear-gradient(to bottom, #87CEEB 0%, #ADD8E6 70%, #90EE90 70%, #8FBC8F 100%); /* Sky and simple ground */
+    border-radius: 15px; /* Match container */
+}
+
+#scoreDisplay {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8em;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 20;
+    border-radius: 15px; /* Match container */
+}
+
+.overlay-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.overlay h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #4A90E2; /* Accent color */
+}
+
+.overlay h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #D0021B; /* Game over accent */
+}
+
+
+.overlay p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.overlay button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#gameOverScreen button {
+     background: linear-gradient(135deg, #F5A623 0%, #D08D1A 100%);
+}
+
+#gameOverScreen button:hover {
+     background: linear-gradient(135deg, #D08D1A 0%, #F5A623 100%);
+}
